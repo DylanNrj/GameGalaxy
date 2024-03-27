@@ -17,9 +17,9 @@
 -  Backend: (Opcional, dependiendo de la complejidad y necesidades futuras) Node.js, Express.js, MongoDB u otras bases de datos para almacenar información de juegos y valoraciones de usuarios.
 
 ###  Contribuciones:
-¡Las contribuciones son bienvenidas! Si estás interesado en contribuir al desarrollo de esta aplicación, no dudes en realizar sugerencias, informar sobre problemas o enviar solicitudes de extracción.
+-   ¡Las contribuciones son bienvenidas! Si estás interesado en contribuir al desarrollo de esta aplicación, no dudes en realizar sugerencias, informar sobre problemas o enviar solicitudes de extracción.
 
 ### Estado del Proyecto:
-Este proyecto está en desarrollo activo. Se están implementando las funcionalidades básicas y se espera agregar características adicionales en futuras versiones.
+- Este proyecto está en desarrollo activo. Se están implementando las funcionalidades básicas y se espera agregar características adicionales en futuras versiones.
 
 **¡Gracias por tu interés en el Catálogo de Juegos!** Esperamos que esta página web se convierta en un recurso útil para los amantes de los videojuegos.
