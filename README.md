@@ -4,7 +4,7 @@
 
 -  **¡Bienvenido al repositorio del Catálogo de Juegos!** Este proyecto tiene como objetivo desarrollar una página web que funcione como un catálogo de juegos, destacando los mejores títulos actuales y proporcionando descripciones detalladas junto con una ponderación por estrellas basada en las valoraciones de los usuarios.
 
-## Características Principales:
+### Características Principales:
 
 1.  Exploración de Juegos: Los usuarios podrán explorar una amplia variedad de juegos, desde los más populares hasta los más recientes.
 2.  Descripciones Detalladas: Cada juego contará con una descripción detallada que incluirá información relevante, como género, plataforma, desarrollador, fecha de lanzamiento y sinopsis.
