@@ -1,6 +1,6 @@
 ## GameGalaxy
 
-###Catálogo de Juegos - Desarrollo Web
+### Catálogo de Juegos - Desarrollo Web
 
 -  **¡Bienvenido al repositorio del Catálogo de Juegos!** Este proyecto tiene como objetivo desarrollar una página web que funcione como un catálogo de juegos, destacando los mejores títulos actuales y proporcionando descripciones detalladas junto con una ponderación por estrellas basada en las valoraciones de los usuarios.
 
