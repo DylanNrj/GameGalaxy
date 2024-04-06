@@ -17,7 +17,7 @@ class ReviewController extends Controller
 
     public function store(Request $request)
     {
-       $review = new review();
+       $review = new Review();
 
         $review->game = $request->game;
         $review->user = $request->user;
@@ -31,11 +31,21 @@ class ReviewController extends Controller
 
     public function destroy($id)
     {
-      
+        $review = Review::findOrFail($id);
+        $review->delete();
+        return response()->json(["result"=>$review], Response::HTTP_OK);
     }
 
     public function update(Request $request, $id)
     {
-       
+        $review = Review::findOrFail($id);
+
+        $review->game = $request->game;
+        $review->user = $request->user;
+        $review->rating = $request->rating;
+        $review->comment = $request->comment;
+
+        $review->save();
+        return response()->json(["result"=>$review], Response::HTTP_OK);
     }
 }

@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\GameController;
+use App\Http\Controllers\Api\ReviewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +17,6 @@ use App\Http\Controllers\Api\GameController;
 */
 
 Route::get('/games', [GameController::class, 'index']);
-use App\Http\Controllers\Api\ReviewController;
 
 Route::controller(ReviewController::class)->group(function (){
     Route::get('/reviews', [ReviewController::class, 'index']);
