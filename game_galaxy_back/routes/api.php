@@ -16,3 +16,11 @@ use App\Http\Controllers\Api\GameController;
 */
 
 Route::get('/games', [GameController::class, 'index']);
+use App\Http\Controllers\Api\ReviewController;
+
+Route::controller(ReviewController::class)->group(function (){
+    Route::get('/reviews', [ReviewController::class, 'index']);
+    Route::post('/review', [ReviewController::class, 'store']);
+    Route::delete('/review/{id}', [ReviewController::class, 'destroy']);
+    Route::put('/review/{id}', [ReviewController::class, 'update']);
+});
