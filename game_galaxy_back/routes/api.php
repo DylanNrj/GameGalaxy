@@ -26,5 +26,6 @@ Route::controller(ReviewController::class)->group(function (){
     Route::put('/review/{id}', [ReviewController::class, 'update']);
 });
 
+Route::get('/users', [UserController::class, 'index']);
 Route::post('/user', [UserController::class, 'createUser']);
 Route::post('/login', [UserController::class, 'login']);
