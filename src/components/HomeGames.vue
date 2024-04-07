@@ -52,16 +52,16 @@
         </v-card>
       </div>
     </div>
-    <div style="padding-top:  32px;" id="all-games">
-      <div>
-        <span> Todos los VideoJuegos</span>
-      </div>
-      <div class="container-all-games">
-        <v-card
-          v-for="(game, index) in games"
-          :key="index"
-          class="mx-auto my-12"
-        >
+    <div style="padding-top: 32px;" id="all-games">
+    <div>
+      <span>Todos los VideoJuegos</span>
+    </div>
+    <div class="container-all-games">
+      <v-card
+        v-for="(game, index) in games"
+        :key="index"
+        class="mx-auto my-12"
+      >
         <div class="vertical-cards">
           <v-img
             height="200"
@@ -95,26 +95,77 @@
             </div>
   
             <div>{{ game.description }}</div>
+            <div class="position-btn-comments">
+              <v-btn
+                color="primary"
+                text
+                @click="showReviews(game)"
+              >
+                Ver opiniones
+              </v-btn>
+            </div>
           </v-card-text>
         </div>
-        </v-card>
-      </div>
+      </v-card>
     </div>
+
+    <v-dialog v-model="dialog" max-width="600">
+      <v-card v-if="selectedGame">
+        <v-card-title class="text-h5">
+          {{ selectedGame.name }} - Opiniones
+        </v-card-title>
+  
+        <v-card-text>
+          <div class="comments-contain">
+            <div v-for="(review, index) in selectedReviews" :key="index">
+              <v-row>
+                <v-col cols="2"> {{ review.user }}</v-col>
+                <v-col cols="2">
+                  <v-rating
+                    :value="parseFloat(review.rating)"
+                        color="amber"
+                      dense
+                      half-increments
+                      readonly
+                      size="14"
+                  ></v-rating>
+                </v-col>
+                <v-col>Comentario: {{ review.comment }}</v-col>
+              </v-row>
+            </div>
+          </div>
+        </v-card-text>
+  
+        <v-card-actions>
+          <v-btn color="green darken-1" text @click="closeDialog">
+            Cerrar
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+  </div>
   </div>
 </template>
 
 <script>
 import games from "../assets/json/game_galaxy.games.json";
+import reviews from "../assets/json/reviews_games.json";
 
 export default {
   name: 'HomeGames',
 
   data: () => ({
-    games: []
+    games: [],
+    reviews: [],
+    dialog: false,
+    selectedGame: null,
+    selectedReviews: []
   }),
 
   created() {
-    this.games = games; 
+    this.games = games;
+    this.reviews = reviews;
+    // this.loadReviews();
   },
 
   filters: {
@@ -125,6 +176,20 @@ export default {
       } else {
         return value.substring(0, length) + '...';
       }
+    }
+  },
+
+  methods: {
+    showReviews(game) {
+      this.selectedGame = game;
+      this.selectedReviews = this.reviews.filter(review => review.game === game.name);
+      this.dialog = true;
+    },
+
+    closeDialog() {
+      this.dialog = false;
+      this.selectedGame = null;
+      this.selectedReviews = [];
     }
   }
 }
@@ -141,6 +206,7 @@ export default {
     gap: 32px;
     overflow-x: scroll;
     overflow-y: hidden;
+    padding: 0px 16px;
   }
 
   .card-game{
@@ -158,4 +224,18 @@ export default {
     justify-content: space-between;
     align-items: flex-end;
   }
+
+  .position-btn-comments{
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .comments-contain{
+    display: grid;
+    gap: 32px;
+  }
+
+  /* .comment{
+    display: flex;
+  } */
 </style>
