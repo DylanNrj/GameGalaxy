@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\GameController;
 use App\Http\Controllers\Api\ReviewController;
+use App\Http\Controllers\Api\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,6 @@ Route::controller(ReviewController::class)->group(function (){
     Route::delete('/review/{id}', [ReviewController::class, 'destroy']);
     Route::put('/review/{id}', [ReviewController::class, 'update']);
 });
+
+Route::post('/user', [UserController::class, 'createUser']);
+Route::post('/login', [UserController::class, 'login']);
