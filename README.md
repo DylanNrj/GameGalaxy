@@ -19,9 +19,10 @@ Asegúrate de tener instalado lo siguiente en tu sistema:
 - Composer (disponible en este enlace https://getcomposer.org/download/)
 - MongoDB y su extension para php en su version 1.17.1 disponible en el siguiente enlace https://github.com/mongodb/mongo-php-driver/releases/
   (el archivo .dll y .pdb deben estar dentro de la carpeta "ext" en la direccion donde se tiene instalado php)
+-  Node en su version 16.20.2
 
 ### Instalación
 
 1. Clona este repositorio en tu máquina local.
 2. Abrir una terminal dentro de la carpeta "game_galaxy_back" y ejecutar el comando "php artisan serve" para que el backend se levante de manera local.
-3. ............................
+3. Abrir una terminal dentro de la carpeta "game_galaxy_front", ejecutar el comando "npm i" para instalar todas las dependencias necesarias para que funcione correctamente el proyecto y ejecutar el comando "npm run serve" para que el frontend se levante de manera local.
