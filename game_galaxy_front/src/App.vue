@@ -7,7 +7,9 @@
         >
           <v-app-bar-nav-icon></v-app-bar-nav-icon>
     
-          <v-toolbar-title>GAMEGALAXY</v-toolbar-title>
+          <v-toolbar-title>
+            <span class="title-page"> GAMEGALAXY </span>
+          </v-toolbar-title>
     
           <v-spacer></v-spacer>
           <v-menu offset-y>
@@ -46,14 +48,21 @@ export default {
 </script>
 
 <style scoped>
+  .title-page{
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+  }
+
   .sign-up{
     font-size: 13px;
     font-style: normal;
     font-weight: 500;
-    line-height: 22px; /* 169.231% */
+    line-height: 22px;
     letter-spacing: 0.46px;
     text-transform: uppercase;
     text-decoration: none;
-    color: #000;
+    color: hsl(244, 12%, 12%);
   }
 </style>

@@ -5,7 +5,7 @@
       <v-btn
         elevation="2"
         href="#all-games"
-        class="button-all-games"
+        class="button-all-games text-btn"
       >
         Ver todos
       </v-btn>
@@ -49,7 +49,9 @@
               {{ game.genre }}
             </div>
   
-            <div>{{ game.description | truncate }}</div>
+            <div>
+              <span class="description-text"> {{ game.description | truncate }} </span>
+            </div>
           </v-card-text>
         </v-card>
       </div>
@@ -104,17 +106,21 @@
                     {{ game.genre }}
                   </div>
         
-                  <div>{{ game.description }}</div>
-                  <div class="position-btn-comments">
+                  <div>
+                    <span class="description-text"> {{ game.description }} </span>
+                  </div>
+                </v-card-text>
+                <v-card-actions class="position-btn-comments">
+                  <div>
                     <v-btn
                       color="primary"
                       text
                       @click="showReviews(game)"
                     >
-                      Ver opiniones
+                      <span class="text-btn">  Ver opiniones </span>
                     </v-btn>
                   </div>
-                </v-card-text>
+                </v-card-actions>
               </v-col>
             </v-row>
           </div>
@@ -132,7 +138,9 @@
               <div class="comments-contain">
                 <div v-for="(review, index) in selectedReviews" :key="index">
                   <v-row>
-                    <v-col cols="2"> {{ review.user }}</v-col>
+                    <v-col cols="2"> 
+                      <span class="description-text"> {{ review.user }} </span>
+                    </v-col>
                     <v-col cols="2">
                       <v-rating
                         :value="parseFloat(review.rating)"
@@ -143,14 +151,16 @@
                           size="14"
                       ></v-rating>
                     </v-col>
-                    <v-col>Comentario: {{ review.comment }}</v-col>
+                    <v-col>
+                      <span class="description-text"> Comentario: {{ review.comment }} </span>
+                    </v-col>
                   </v-row>
                 </div>
               </div>
             </v-card-text>
       
-            <v-card-actions>
-              <v-btn color="darken-1" text @click="closeDialog">
+            <v-card-actions class="position-btn-comments">
+              <v-btn class="text-btn" text @click="closeDialog">
                 Cerrar
               </v-btn>
             </v-card-actions>
@@ -254,6 +264,7 @@ export default {
     font-style: normal;
     font-weight: 600;
     line-height: 32px;
+    color: hsl(244, 12%, 12%);
   }
 
   .title-cards{
@@ -261,6 +272,7 @@ export default {
     font-style: normal;
     font-weight: 600;
     line-height: 24px; 
+    color: hsl(244, 12%, 12%);
   }
 
   .content-comments{
@@ -268,5 +280,22 @@ export default {
     flex-direction: column;
     gap: 16px;
     padding: 8px
+  }
+
+  .text-btn{
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: 0.46px;
+    text-transform: uppercase;
+  }
+
+  .description-text{
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    color: hsl(244, 4%, 36%);
   }
 </style>
