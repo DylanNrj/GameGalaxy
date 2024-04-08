@@ -1,7 +1,7 @@
 <template>
   <div class="fix-content">
     <div class="container-button-all-games">
-      <span> Últimos Lanzamientos </span>
+      <span class="titles"> Últimos Lanzamientos </span>
       <v-btn
         elevation="2"
         href="#all-games"
@@ -22,7 +22,9 @@
             :src="game.image_url"
           ></v-img>
   
-          <v-card-title>{{ game.name }}</v-card-title>
+          <v-card-title>
+            <span class="title-cards"> {{ game.name }} </span>
+          </v-card-title>
   
           <v-card-text>
             <v-row
@@ -53,97 +55,109 @@
       </div>
     </div>
     <div style="padding-top: 32px;" id="all-games">
-    <div>
-      <span>Todos los VideoJuegos</span>
-    </div>
-    <div class="container-all-games">
-      <v-card
-        v-for="(game, index) in games"
-        :key="index"
-        class="mx-auto my-12"
-      >
-        <div class="vertical-cards">
-          <v-img
-            height="200"
-            width="200"
-            :src="game.image_url"
-          ></v-img>
-  
-          <v-card-title>{{ game.name }}</v-card-title>
-  
-          <v-card-text>
-            <v-row
-              align="center"
-              class="mx-0"
-            >
-              <v-rating
-                :value="game.rating"
-                color="amber"
-                dense
-                half-increments
-                readonly
-                size="14"
-              ></v-rating>
-  
-              <div class="grey--text ms-4">
-                {{ game.rating }} ({{ game.num_reviews }})
-              </div>
-            </v-row>
-  
-            <div class="my-4 text-subtitle-1">
-              {{ game.genre }}
-            </div>
-  
-            <div>{{ game.description }}</div>
-            <div class="position-btn-comments">
-              <v-btn
-                color="primary"
-                text
-                @click="showReviews(game)"
-              >
-                Ver opiniones
-              </v-btn>
-            </div>
-          </v-card-text>
-        </div>
-      </v-card>
-    </div>
-
-    <v-dialog v-model="dialog" max-width="600">
-      <v-card v-if="selectedGame">
-        <v-card-title class="text-h5">
-          {{ selectedGame.name }} - Opiniones
-        </v-card-title>
-  
-        <v-card-text>
-          <div class="comments-contain">
-            <div v-for="(review, index) in selectedReviews" :key="index">
-              <v-row>
-                <v-col cols="2"> {{ review.user }}</v-col>
-                <v-col cols="2">
-                  <v-rating
-                    :value="parseFloat(review.rating)"
-                        color="amber"
+      <div>
+        <span class="titles">Todos los VideoJuegos</span>
+      </div>
+      <div class="container-all-games">
+        <v-card
+          v-for="(game, index) in games"
+          :key="index"
+          class="mx-auto my-12"
+        >
+          <div class="vertical-cards">
+            <v-row>
+              <v-col cols="2">
+                <v-img
+                  height="200"
+                  width="200"
+                  :src="game.image_url"
+                ></v-img>
+              </v-col>
+              
+              <v-col cols="2" align-self="center">
+                <v-card-title>
+                  <span class="title-cards"> {{ game.name }} </span>
+                </v-card-title>
+              </v-col>
+      
+              <v-col align-self="center">
+                <v-card-text>
+                  <v-row
+                    align="center"
+                    class="mx-0"
+                  >
+                    <v-rating
+                      :value="game.rating"
+                      color="amber"
                       dense
                       half-increments
                       readonly
                       size="14"
-                  ></v-rating>
-                </v-col>
-                <v-col>Comentario: {{ review.comment }}</v-col>
-              </v-row>
-            </div>
+                    ></v-rating>
+        
+                    <div class="grey--text ms-4">
+                      {{ game.rating }} ({{ game.num_reviews }})
+                    </div>
+                  </v-row>
+        
+                  <div class="my-4 text-subtitle-1">
+                    {{ game.genre }}
+                  </div>
+        
+                  <div>{{ game.description }}</div>
+                  <div class="position-btn-comments">
+                    <v-btn
+                      color="primary"
+                      text
+                      @click="showReviews(game)"
+                    >
+                      Ver opiniones
+                    </v-btn>
+                  </div>
+                </v-card-text>
+              </v-col>
+            </v-row>
           </div>
-        </v-card-text>
-  
-        <v-card-actions>
-          <v-btn color="green darken-1" text @click="closeDialog">
-            Cerrar
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
-  </div>
+        </v-card>
+      </div>
+
+      <v-dialog v-model="dialog" max-width="600">
+        <v-card v-if="selectedGame">
+          <div class="content-comments">
+            <v-card-title>
+              <span class="titleS"> {{ selectedGame.name }} - Opiniones </span>
+            </v-card-title>
+      
+            <v-card-text>
+              <div class="comments-contain">
+                <div v-for="(review, index) in selectedReviews" :key="index">
+                  <v-row>
+                    <v-col cols="2"> {{ review.user }}</v-col>
+                    <v-col cols="2">
+                      <v-rating
+                        :value="parseFloat(review.rating)"
+                            color="amber"
+                          dense
+                          half-increments
+                          readonly
+                          size="14"
+                      ></v-rating>
+                    </v-col>
+                    <v-col>Comentario: {{ review.comment }}</v-col>
+                  </v-row>
+                </div>
+              </div>
+            </v-card-text>
+      
+            <v-card-actions>
+              <v-btn color="darken-1" text @click="closeDialog">
+                Cerrar
+              </v-btn>
+            </v-card-actions>
+          </div>
+        </v-card>
+      </v-dialog>
+    </div>
   </div>
 </template>
 
@@ -235,7 +249,24 @@ export default {
     gap: 32px;
   }
 
-  /* .comment{
+  .titles{
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+  }
+
+  .title-cards{
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px; 
+  }
+
+  .content-comments{
     display: flex;
-  } */
+    flex-direction: column;
+    gap: 16px;
+    padding: 8px
+  }
 </style>

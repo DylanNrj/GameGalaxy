@@ -23,7 +23,7 @@
             <v-list>
               <v-list-item>
                 <v-list-item-title> 
-                  <a href="">Cerrar sesión </a>
+                  <a href="" class="sign-up">Cerrar sesión </a>
                 </v-list-item-title>
               </v-list-item>
             </v-list>
@@ -44,3 +44,16 @@ export default {
   }),
 };
 </script>
+
+<style scoped>
+  .sign-up{
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px; /* 169.231% */
+    letter-spacing: 0.46px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #000;
+  }
+</style>
