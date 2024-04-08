@@ -1,25 +1,27 @@
-## GameGalaxy
+<img src="https://github.com/DylanNrj/GameGalaxy/blob/Diego_Moys/GameGalaxy_Logo.webp" alt="Logo de Game Galaxy" width="300" height="300">
 
-### Catálogo de Juegos - Desarrollo Web
+¡Bienvenido a Game Galaxy, tu destino definitivo para descubrir y clasificar videojuegos! 
+Con Game Galaxy, puedes explorar una galaxia de juegos de todas las plataformas y géneros, 
+desde los clásicos retro hasta los últimos lanzamientos. ¿Encontraste un juego increíble que merece ser destacado? 
+¡Califícalo y comparte tu opinión para ayudar a otros jugadores a encontrar joyas ocultas! Únete a nuestra comunidad de jugadores 
+y ¡que comience la aventura en el universo de los videojuegos!
 
--  **¡Bienvenido al repositorio del Catálogo de Juegos!** Este proyecto tiene como objetivo desarrollar una página web que funcione como un catálogo de juegos, destacando los mejores títulos actuales y proporcionando descripciones detalladas junto con una ponderación por estrellas basada en las valoraciones de los usuarios.
+## Instrucciones de Ejecución
 
-### Características Principales:
+Sigue estos pasos para ejecutar el proyecto en tu máquina local.
 
-1.  Exploración de Juegos: Los usuarios podrán explorar una amplia variedad de juegos, desde los más populares hasta los más recientes.
-2.  Descripciones Detalladas: Cada juego contará con una descripción detallada que incluirá información relevante, como género, plataforma, desarrollador, fecha de lanzamiento y sinopsis.
-3.  Valoraciones de Usuarios: Los usuarios podrán calificar y dejar reseñas para los juegos, lo que ayudará a otros usuarios a tomar decisiones informadas sobre qué juegos jugar.
-4.  Ponderación por Estrellas: La ponderación por estrellas reflejará la valoración promedio de los usuarios para cada juego, lo que permitirá a los visitantes del sitio identificar rápidamente los juegos más populares y mejor valorados.
-5.  Interfaz Intuitiva: El diseño de la página web será intuitivo y fácil de navegar, asegurando una experiencia de usuario fluida y agradable.
-   
-### Tecnologías Utilizadas: 
--  Frontend: HTML, CSS, JavaScript (posiblemente utilizando un framework como React o Vue.js para una experiencia más dinámica).
--  Backend: (Opcional, dependiendo de la complejidad y necesidades futuras) Node.js, Express.js, MongoDB u otras bases de datos para almacenar información de juegos y valoraciones de usuarios.
+### Requisitos Previos
 
-###  Contribuciones:
--   ¡Las contribuciones son bienvenidas! Si estás interesado en contribuir al desarrollo de esta aplicación, no dudes en realizar sugerencias, informar sobre problemas o enviar solicitudes de extracción.
+Asegúrate de tener instalado lo siguiente en tu sistema:
 
-### Estado del Proyecto:
-- Este proyecto está en desarrollo activo. Se están implementando las funcionalidades básicas y se espera agregar características adicionales en futuras versiones.
+- PhP en su version 8.2
+- Laravel en su version 9
+- Composer (disponible en este enlace https://getcomposer.org/download/)
+- MongoDB y su extension para php en su version 1.17.1 disponible en el siguiente enlace https://github.com/mongodb/mongo-php-driver/releases/
+  (el archivo .dll y .pdb deben estar dentro de la carpeta "ext" en la direccion donde se tiene instalado php)
 
-**¡Gracias por tu interés en el Catálogo de Juegos!** Esperamos que esta página web se convierta en un recurso útil para los amantes de los videojuegos.
+### Instalación
+
+1. Clona este repositorio en tu máquina local.
+2. Abrir una terminal dentro de la carpeta "game_galaxy_back" y ejecutar el comando "php artisan serve" para que el backend se levante de manera local.
+3. ............................
