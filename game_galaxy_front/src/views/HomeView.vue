@@ -1,15 +1,15 @@
 <template>
-  <Formulario />
+  <home-games />
 </template>
 
 <script>
-  import Formulario from '../components/Formulario'
+  import HomeGames from '../components/HomeGames'
 
   export default {
     name: 'Home',
 
     components: {
-      Formulario,
+      HomeGames,
     },
   }
 </script>

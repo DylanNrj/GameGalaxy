@@ -1,0 +1,242 @@
+[
+    {
+        "game": "Elden Ring",
+        "user": "TheMoys",
+        "rating": "4",
+        "comment": "Increíble"
+    },
+    {
+        "game": "Elden Ring",
+        "user": "Diegoza04",
+        "rating": "4.3",
+        "comment": "Waos"
+    },
+    {
+        "game": "Elden Ring",
+        "user": "DylanNrj",
+        "rating": "4.8",
+        "comment": "Qué buen juego"
+    },
+    {
+        "game": "Elden Ring",
+        "user": "andriuw08",
+        "rating": "5",
+        "comment": "Muy entretenido"
+    },
+    {
+        "game": "Persona 5 Royal",
+        "user": "TheMoys",
+        "rating": "4.8",
+        "comment": "Una experiencia de juego emocionante y llena de sorpresas."
+    },
+    {
+        "game": "Persona 5 Royal",
+        "user": "Diegoza04",
+        "rating": "4.5",
+        "comment": "Los personajes son increíblemente profundos, y la trama es adictiva."
+    },
+    {
+        "game": "Persona 5 Royal",
+        "user": "DylanNrj",
+        "rating": "4.7",
+        "comment": "Me encantó cada momento de este juego. Absolutamente asombroso."
+    },
+    {
+        "game": "Persona 5 Royal",
+        "user": "andriuw08",
+        "rating": "4.6",
+        "comment": "La estética y la música son simplemente sublimes. Un juego que no se puede perder."
+    },
+    {
+        "game": "Red Dead Redemption 2",
+        "user": "TheMoys",
+        "rating": "4.9",
+        "comment": "Una obra maestra en todos los aspectos. La historia es conmovedora y el mundo es vasto."
+    },
+    {
+        "game": "Red Dead Redemption 2",
+        "user": "Diegoza04",
+        "rating": "4.7",
+        "comment": "Me enamoré de la inmersión y la atención al detalle. Rockstar hizo un trabajo increíble."
+    },
+    {
+        "game": "Red Dead Redemption 2",
+        "user": "DylanNrj",
+        "rating": "4.8",
+        "comment": "Un juego que redefine las expectativas. Cada momento es memorable."
+    },
+    {
+        "game": "Red Dead Redemption 2",
+        "user": "andriuw08",
+        "rating": "4.6",
+        "comment": "Una experiencia cinematográfica y emocionalmente potente. Bravo, Rockstar."
+    },
+    {
+        "game": "The Legend of Zelda: Tears of the Kingdom",
+        "user": "TheMoys",
+        "rating": "4.5",
+        "comment": "Un viaje épico a través de un mundo mágico. Cada rincón es una maravilla visual."
+    },
+    {
+        "game": "The Legend of Zelda: Tears of the Kingdom",
+        "user": "Diegoza04",
+        "rating": "4.3",
+        "comment": "Me sumergí por completo en la historia y la atmósfera. Una aventura inolvidable."
+    },
+    {
+        "game": "The Legend of Zelda: Tears of the Kingdom",
+        "user": "DylanNrj",
+        "rating": "4.4",
+        "comment": "Los puzles son desafiantes y gratificantes. Un juego que te absorbe por completo."
+    },
+    {
+        "game": "The Legend of Zelda: Tears of the Kingdom",
+        "user": "andriuw08",
+        "rating": "4.6",
+        "comment": "La música y el diseño de niveles son simplemente magistrales. Un verdadero tesoro."
+    },
+    {
+        "game": "Baldur's Gate 3",
+        "user": "TheMoys",
+        "rating": "4.3",
+        "comment": "Una experiencia de rol profunda y emocionante. No puedo esperar para jugar más."
+    },
+    {
+        "game": "Baldur's Gate 3",
+        "user": "Diegoza04",
+        "rating": "4.1",
+        "comment": "Me encanta la libertad y las decisiones significativas. Un RPG increíblemente inmersivo."
+    },
+    {
+        "game": "Baldur's Gate 3",
+        "user": "DylanNrj",
+        "rating": "4.2",
+        "comment": "El combate estratégico y la narrativa cautivadora hacen de este juego una joya."
+    },
+    {
+        "game": "Baldur's Gate 3",
+        "user": "andriuw08",
+        "rating": "4.4",
+        "comment": "Me siento completamente inmerso en este mundo. Un juego que supera las expectativas."
+    },
+    {
+        "game": "The Legend of Zelda: Breath of the Wild",
+        "user": "TheMoys",
+        "rating": "4.8",
+        "comment": "Una obra maestra de la exploración y la libertad. Cada descubrimiento es emocionante."
+    },
+    {
+        "game": "The Legend of Zelda: Breath of the Wild",
+        "user": "Diegoza04",
+        "rating": "4.6",
+        "comment": "Me perdí durante horas explorando este hermoso mundo. Un juego que deja una impresión duradera."
+    },
+    {
+        "game": "The Legend of Zelda: Breath of the Wild",
+        "user": "DylanNrj",
+        "rating": "4.7",
+        "comment": "Los santuarios son desafiantes y gratificantes. Un juego que siempre ofrece algo nuevo."
+    },
+    {
+        "game": "The Legend of Zelda: Breath of the Wild",
+        "user": "andriuw08",
+        "rating": "4.5",
+        "comment": "La física y la interacción con el entorno son simplemente asombrosas. Un juego que redefine el género."
+    },
+    {
+        "game": "Super Mario Odyssey",
+        "user": "TheMoys",
+        "rating": "4.5",
+        "comment": "Un regreso glorioso a la forma clásica de Mario. La creatividad está en su punto más alto."
+    },
+    {
+        "game": "Super Mario Odyssey",
+        "user": "Diegoza04",
+        "rating": "4.3",
+        "comment": "Me encanta la variedad de niveles y los secretos para descubrir. Un juego que nunca deja de sorprender."
+    },
+    {
+        "game": "Super Mario Odyssey",
+        "user": "DylanNrj",
+        "rating": "4.4",
+        "comment": "Los controles son suaves y responsivos. La sonrisa no se borrará de tu rostro mientras juegas."
+    },
+    {
+        "game": "Super Mario Odyssey",
+        "user": "andriuw08",
+        "rating": "4.6",
+        "comment": "Una delicia visual y auditiva. Nintendo ha vuelto a hacerlo con este título."
+    },
+    {
+        "game": "Super Smash Bros. Ultimate",
+        "user": "TheMoys",
+        "rating": "4.7",
+        "comment": "Una celebración de la historia de los videojuegos. Cada personaje es un tributo a la diversión."
+    },
+    {
+        "game": "Super Smash Bros. Ultimate",
+        "user": "Diegoza04",
+        "rating": "4.5",
+        "comment": "Los combates son emocionantes y siempre hay algo nuevo que descubrir. Un must-have para cualquier fan de los juegos."
+    },
+    {
+        "game": "Super Smash Bros. Ultimate",
+        "user": "DylanNrj",
+        "rating": "4.6",
+        "comment": "La cantidad de contenido es asombrosa. Nunca me canso de jugar con amigos."
+    },
+    {
+        "game": "Super Smash Bros. Ultimate",
+        "user": "andriuw08",
+        "rating": "4.8",
+        "comment": "Una experiencia multijugador brillante. Toneladas de contenido y personajes."
+    },
+    {
+        "game": "The Last of Us Remastered",
+        "user": "TheMoys",
+        "rating": "4.9",
+        "comment": "Una obra maestra del storytelling. La remasterización eleva aún más este clásico moderno."
+    },
+    {
+        "game": "The Last of Us Remastered",
+        "user": "Diegoza04",
+        "rating": "4.7",
+        "comment": "La conexión emocional con los personajes es increíble. Una experiencia que se queda contigo mucho después de haberla terminado."
+    },
+    {
+        "game": "The Last of Us Remastered",
+        "user": "DylanNrj",
+        "rating": "4.8",
+        "comment": "Los gráficos y la actuación son sobresalientes. Un juego que te deja sin aliento hasta el final."
+    },
+    {
+        "game": "The Last of Us Remastered",
+        "user": "andriuw08",
+        "rating": "4.6",
+        "comment": "Una narrativa envolvente y un gameplay emocionante. Una experiencia que merece ser vivida."
+    },
+    {
+        "game": "Grand Theft Auto V",
+        "user": "TheMoys",
+        "rating": "4.8",
+        "comment": "Un mundo abierto vasto y lleno de vida. Las misiones y la diversión son interminables."
+    },
+    {
+        "game": "Grand Theft Auto V",
+        "user": "Diegoza04",
+        "rating": "4.6",
+        "comment": "La historia es absorbente y los personajes son memorables. Rockstar lo ha vuelto a hacer."
+    },
+    {
+        "game": "Grand Theft Auto V",
+        "user": "DylanNrj",
+        "rating": "4.7",
+        "comment": "La libertad para explorar y causar caos es emocionante. Nunca me canso de jugarlo."
+    },
+    {
+        "game": "Grand Theft Auto V",
+        "user": "andriuw08",
+        "rating": "4.9",
+        "comment": "Una obra maestra del mundo abierto. La atención al detalle es fenomenal. Un clásico moderno."
+    }
+]

@@ -68,7 +68,7 @@ export default {
       const validUser = this.users.find(user => user.user === username && user.password === password);
 
       if (validUser) {
-        window.location.href = "https://www.google.com";
+        window.location.href = "http://localhost:8080/#/home";
       } else {
         alert("Usuario o contraseña incorrectos");
       }
