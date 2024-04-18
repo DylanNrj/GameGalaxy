@@ -27,6 +27,7 @@ Asegúrate de tener instalado lo siguiente en tu sistema:
 2. Abrir una terminal dentro de la carpeta "game_galaxy_back" y ejecutar el comando "php artisan serve" para que el backend se levante de manera local.
 3. ............................
 
+
 ### Descripción del backEnd
 
 - En la ruta app/http/controllers/api se encuentran los diferentes controladores que hay para la base de datos, con sus schemas y relaciones, los schemas se ven de la siguiente manera:
