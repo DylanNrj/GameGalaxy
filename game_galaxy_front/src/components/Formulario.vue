@@ -50,6 +50,7 @@
 
 <script>
 import usersData from '../assets/JSON/game_galaxy.users.json';
+import axios from 'axios'
 
 export default {
   data() {
