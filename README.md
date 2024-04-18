@@ -42,6 +42,8 @@ Asegúrate de tener instalado lo siguiente en tu sistema:
 
 ### Descripción del Front
 
+- Estas son las rutas del Front
+
   * src/: Este es donde vive el código fuente principal de la aplicación.
   * src/assets/: Este directorio contiene activos estáticos como imágenes y hojas de estilo. En este caso, incluye una imagen del logotipo de GameGalaxy.
   * src/components/: Este directorio contiene componentes UI reutilizables para la aplicación. Incluye un componente Formulario.vue y HomeGames.vue.
