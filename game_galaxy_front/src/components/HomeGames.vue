@@ -30,7 +30,7 @@
       </div>
       <div>
         <div class="container-preview-games">
-          <v-card v-for="(game, index) in games" :key="index" class="mx-auto my-12 card-game">
+          <v-card v-for="(game, index) in info" :key="index" class="mx-auto my-12 card-game">
             <v-img height="350" :src="game.image_url"></v-img>
 
             <v-card-title>
@@ -57,12 +57,13 @@
           </v-card>
         </div>
       </div>
-      <div style="padding-top: 32px;" id="all-games">
+    </div>
+          <div style="padding-top: 32px;" id="all-games">
         <div>
           <span class="titles">Todos los VideoJuegos</span>
         </div>
         <div class="container-all-games">
-          <v-card v-for="(game, index) in games" :key="index" class="mx-auto my-12">
+          <v-card v-for="(game, index) in info" :key="index" class="mx-auto my-12">
             <div class="vertical-cards">
               <v-row>
                 <v-col cols="2">
@@ -141,13 +142,14 @@
           </v-card>
         </v-dialog>
       </div>
-    </div>
   </div>
 </template>
 
 <script>
+import axios from "axios";
 import games from "../assets/JSON/game_galaxy.games.json";
 import reviews from "../assets/JSON/reviews_games.json";
+
 
 export default {
   name: 'HomeGames',
@@ -157,7 +159,8 @@ export default {
     reviews: [],
     dialog: false,
     selectedGame: null,
-    selectedReviews: []
+    selectedReviews: [],
+    info: []
   }),
 
   created() {
@@ -189,6 +192,14 @@ export default {
       this.selectedGame = null;
       this.selectedReviews = [];
     }
+  },
+
+mounted() {
+  axios
+    .get('http://localhost:8000/api/games')
+    .then(response => {
+      this.info = response.data;
+    })
   }
 }
 </script>
