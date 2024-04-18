@@ -42,18 +42,18 @@ Asegúrate de tener instalado lo siguiente en tu sistema:
 
 ### Descripción del Front
 
-*  src/: Este es donde vive el código fuente principal de la aplicación.
+  * src/: Este es donde vive el código fuente principal de la aplicación.
 
-*  src/assets/: Este directorio contiene activos estáticos como imágenes y hojas de estilo. En este caso, incluye una imagen del logotipo de GameGalaxy.
+  * src/assets/: Este directorio contiene activos estáticos como imágenes y hojas de estilo. En este caso, incluye una imagen del logotipo de GameGalaxy.
 
-*  src/components/: Este directorio contiene componentes UI reutilizables para la aplicación. Incluye un componente Formulario.vue y HomeGames.vue.
+  * src/components/: Este directorio contiene componentes UI reutilizables para la aplicación. Incluye un componente Formulario.vue y HomeGames.vue.
 
-*  src/plugins/: Este directorio contiene plugins de JavaScript utilizados en la aplicación. Incluye plugins para Axios (para hacer solicitudes HTTP) y Vuetify (para agregar componentes de Material Design).
+  * src/plugins/: Este directorio contiene plugins de JavaScript utilizados en la aplicación. Incluye plugins para Axios (para hacer solicitudes HTTP) y Vuetify (para agregar componentes de Material Design).
 
-*  src/views/: Este directorio contiene diferentes vistas para la aplicación. Incluye una HomeView.vue y LoginView.vue.
+  * src/views/: Este directorio contiene diferentes vistas para la aplicación. Incluye una HomeView.vue y LoginView.vue.
 
-*  src/App.vue: Este es el componente de la aplicación principal que lo une todo.
+  * src/App.vue: Este es el componente de la aplicación principal que lo une todo.
 
-*  src/main.js: Este es el punto de entrada de la aplicación, donde se crea y monta la instancia de Vue en el DOM.
+  * src/main.js: Este es el punto de entrada de la aplicación, donde se crea y monta la instancia de Vue en el DOM.
 
-*  package.json: Este archivo contiene metadatos sobre el proyecto, incluyendo sus dependencias y scripts.
+  * package.json: Este archivo contiene metadatos sobre el proyecto, incluyendo sus dependencias y scripts.
