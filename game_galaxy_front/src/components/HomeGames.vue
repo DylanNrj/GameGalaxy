@@ -113,7 +113,6 @@
               <v-card-title>
                 <span class="titleS"> {{ selectedGame.name }} - Opiniones </span>
               </v-card-title>
-
               <v-card-text>
                 <div class="comments-contain">
                   <div v-for="(review, index) in selectedReviews" :key="index">
@@ -132,7 +131,6 @@
                   </div>
                 </div>
               </v-card-text>
-
               <v-card-actions class="position-btn-comments">
                 <v-btn class="text-btn" text @click="closeDialog">
                   Cerrar
@@ -147,8 +145,8 @@
 
 <script>
 import axios from "axios";
-import games from "../assets/JSON/game_galaxy.games.json";
-import reviews from "../assets/JSON/reviews_games.json";
+import games from "../assets/json/game_galaxy.games.json";
+import reviews from "../assets/json/reviews_games.json";
 
 
 export default {
