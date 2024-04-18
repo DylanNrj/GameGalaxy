@@ -145,8 +145,8 @@
 
 <script>
 import axios from "axios";
-import games from "../assets/json/game_galaxy.games.json";
-import reviews from "../assets/json/reviews_games.json";
+import games from "../assets/JSON/game_galaxy.games.json";
+import reviews from "../assets/JSON/reviews_games.json";
 
 
 export default {

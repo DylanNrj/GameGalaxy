@@ -51,7 +51,7 @@
 
 <script>
 import usersData from '../assets/JSON/game_galaxy.users.json';
-import axios from 'axios'
+import axios from "axios";
 
 export default {
   data() {
@@ -60,7 +60,7 @@ export default {
       showPassword: false,
       rememberUser: false,
       forgotEmail: '',
-      user: []
+      user: [axios.get('http://localhost:8000/api/users')]
     };
   },
   methods: {
