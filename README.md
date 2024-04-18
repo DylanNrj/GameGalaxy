@@ -53,6 +53,18 @@ Asegúrate de tener instalado lo siguiente en tu sistema:
   * src/main.js: Este es el punto de entrada de la aplicación, donde se crea y monta la instancia de Vue en el DOM.
   * package.json: Este archivo contiene metadatos sobre el proyecto, incluyendo sus dependencias y scripts.
 
+### Usuarios y Contraseñas de Login 
+
+- Estas son las credenciales para iniciar sesión en la página web 
+  * Usuario: TheMoys
+  * Contraseña: $2y$10$p/B5LP3pJLXg0fiV3BAE1OPzbQeADPkNUUqf931x7bBKvpE2t7tYi
+  * Usuario: andriuwyepez 
+  * Contraseña: $2y$10$mxx9rQbNY2OCcHID4uM1UuNcb7xO.ivoa0KDOxNXrvXpjeFI3KGpe
+  * Usuario: Diegoza04
+  * Contraseña: $2y$10$jcbMoMbEo4PclxLWwqZCse3cgJd1qeJM86uUsNRn/njNcCo21w7tS
+  * Usuario: DylanNrj
+  * Contraseña: $2y$10$JzL8DPb2jgJP37tEVKllIOSlP0NG7fTpUXprhZa/GaidEQNVXt1da
+
 
 
 
