@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Review;
+use App\Models\Game;
 use Symfony\Component\HttpFoundation\Response;
 
 class ReviewController extends Controller
@@ -19,10 +20,15 @@ class ReviewController extends Controller
     {
        $review = new Review();
 
-        $review->game = $request->game;
-        $review->user = $request->user;
-        $review->rating = $request->rating;
-        $review->comment = $request->comment;
+       $game = Game::where('name', $request->game)->first();
+
+        $review->create([
+            'game' => $request->game,
+            'gameId' => $game->id,
+            'user' => $request->user,
+            'rating'=> $request->rating,
+            'comment' => $request->comment
+        ]);
 
         $review->save();
 

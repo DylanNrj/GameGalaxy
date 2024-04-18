@@ -4,6 +4,7 @@
       <img src="../assets/bg-login.png" alt="Imagen Login" class="login__img">
 
       <form @submit.prevent="login" class="login__form">
+      {{ user }}
         <div>
           <h1 class="login__title">
             <span>Bienvenido</span> De Nuevo
@@ -50,6 +51,7 @@
 
 <script>
 import usersData from '../assets/JSON/game_galaxy.users.json';
+import axios from "axios";
 
 export default {
   data() {
@@ -57,7 +59,8 @@ export default {
       users: usersData,
       showPassword: false,
       rememberUser: false,
-      forgotEmail: ''
+      forgotEmail: '',
+      user: [axios.get('http://localhost:8000/api/users')]
     };
   },
   methods: {
@@ -83,6 +86,14 @@ export default {
       if (rememberedUser) {
         document.querySelector('.login__input[type="text"]').value = rememberedUser;
       }
+    },
+
+    mounted() {
+    axios
+      .get('http://localhost:8000/api/users')
+      .then(response => {
+        this.user = response.data;
+      })
     },
 
     forgotPassword() {

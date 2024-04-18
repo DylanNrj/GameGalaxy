@@ -10,4 +10,12 @@ class Review extends Model
     use HasFactory;
     protected $connection = 'mongodb';
     protected $collection = 'reviews';
+
+    protected $fillable = [
+        'game',
+        'gameId',
+        'user',
+        'rating',
+        'comment'
+    ];
 }
