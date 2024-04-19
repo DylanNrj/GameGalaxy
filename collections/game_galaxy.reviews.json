@@ -1,0 +1,47 @@
+[{
+  "_id": {
+    "$oid": "66113d6425b3d42e6d0db772"
+  },
+  "game": "Elden Ring",
+  "user": "Diego Barraza",
+  "rating": 7,
+  "comment": "Me gusto mucho pero es muy largo",
+  "updated_at": {
+    "$date": "2024-04-06T12:17:40.140Z"
+  },
+  "created_at": {
+    "$date": "2024-04-06T12:17:40.140Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6621190bf4b0bea6dd007752"
+  },
+  "game": "Elden Ring",
+  "gameId": {},
+  "user": "Diego Barraza",
+  "rating": 7,
+  "comment": "Me gusto mucho",
+  "updated_at": {
+    "$date": "2024-04-18T12:58:51.748Z"
+  },
+  "created_at": {
+    "$date": "2024-04-18T12:58:51.748Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "66211a45f4b0bea6dd007754"
+  },
+  "game": "Elden Ring",
+  "gameId": "66102e9ce5a28dd3abda9d76",
+  "user": "Diego Barraza",
+  "rating": 7,
+  "comment": "Me gusto mucho",
+  "updated_at": {
+    "$date": "2024-04-18T13:04:05.811Z"
+  },
+  "created_at": {
+    "$date": "2024-04-18T13:04:05.811Z"
+  }
+}]
