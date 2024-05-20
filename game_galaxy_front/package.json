@@ -12,9 +12,10 @@
     "vuetify": "^2.6.0"
   },
   "devDependencies": {
+    "@mdi/font": "^7.4.47",
     "@vue/cli-plugin-router": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "sass": "~1.32.0",
     "sass-loader": "^10.0.0",
     "vue-cli-plugin-axios": "~0.0.4",

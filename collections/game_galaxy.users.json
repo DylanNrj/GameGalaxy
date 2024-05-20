@@ -1,0 +1,56 @@
+[{
+  "_id": {
+    "$oid": "66130e833e64865272032912"
+  },
+  "user": "TheMoys",
+  "email": "diegomoys01@gmail.com",
+  "password": "$2y$10$p/B5LP3pJLXg0fiV3BAE1OPzbQeADPkNUUqf931x7bBKvpE2t7tYi",
+  "updated_at": {
+    "$date": "2024-04-07T21:22:11.104Z"
+  },
+  "created_at": {
+    "$date": "2024-04-07T21:22:11.104Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "661318203e64865272032913"
+  },
+  "user": "andriuwyepez",
+  "email": "andriuw@gmail.com",
+  "password": "$2y$10$mxx9rQbNY2OCcHID4uM1UuNcb7xO.ivoa0KDOxNXrvXpjeFI3KGpe",
+  "updated_at": {
+    "$date": "2024-04-07T22:03:12.919Z"
+  },
+  "created_at": {
+    "$date": "2024-04-07T22:03:12.919Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "661318323e64865272032914"
+  },
+  "user": "Diegoza04",
+  "email": "diegobarraza@gmail.com",
+  "password": "$2y$10$jcbMoMbEo4PclxLWwqZCse3cgJd1qeJM86uUsNRn/njNcCo21w7tS",
+  "updated_at": {
+    "$date": "2024-04-07T22:03:30.830Z"
+  },
+  "created_at": {
+    "$date": "2024-04-07T22:03:30.830Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "661318523e64865272032915"
+  },
+  "user": "DylanNrj",
+  "email": "dylannrj@gmail.com",
+  "password": "$2y$10$JzL8DPb2jgJP37tEVKllIOSlP0NG7fTpUXprhZa/GaidEQNVXt1da",
+  "updated_at": {
+    "$date": "2024-04-07T22:04:02.775Z"
+  },
+  "created_at": {
+    "$date": "2024-04-07T22:04:02.775Z"
+  }
+}]

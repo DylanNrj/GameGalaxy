@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "ES6",                          // Define el target de ECMAScript
+    "module": "commonjs",                     // Define el módulo de Node.js
+    "outDir": "./dist",                       // Carpeta de salida para los archivos compilados
+    "rootDir": "./src",                       // Carpeta raíz del código fuente
+    "strict": true,                           // Habilita todas las verificaciones estrictas
+    "esModuleInterop": true,                  // Habilita la interoperabilidad con módulos ES
+    "skipLibCheck": true,                     // Omite la verificación de tipos en archivos de declaración
+    "forceConsistentCasingInFileNames": true, // Fuerza el uso consistente de mayúsculas y minúsculas en los nombres de archivo
+    "noImplicitAny": true,                    // Lanza errores en expresiones y declaraciones con tipo implícito any
+    "noImplicitThis": true,                   // Lanza errores cuando se encuentra `this` con tipo implícito any
+    "strictNullChecks": true,                 // Lanza errores en expresiones con valores nulos o indefinidos
+    "resolveJsonModule": true,                // Permite importar módulos JSON
+    "moduleResolution": "node",               // Usa la resolución de módulos de Node.js
+    "typeRoots": ["./node_modules/@types"],   // Especifica las rutas a los archivos de definición de tipos
+    "baseUrl": "./",                          // Agrega esta línea
+    "paths": {                                // Configura los alias de los módulos
+      "@routes/*": ["src/routes/*"],
+      "@models/*": ["src/models/*"]
+    }
+  },
+  "include": ["src"],                          // Incluye todos los archivos dentro del directorio src
+  "exclude": ["node_modules", "dist"]          // Excluye los directorios node_modules y dist
+}
