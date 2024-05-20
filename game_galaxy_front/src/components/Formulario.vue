@@ -50,17 +50,16 @@
 </template>
 
 <script>
-import usersData from '../assets/JSON/game_galaxy.users.json';
-import axios from "axios";
+import axios from 'axios';
 
 export default {
   data() {
     return {
-      users: usersData,
+      users: [], // Inicialmente vacío
       showPassword: false,
       rememberUser: false,
       forgotEmail: '',
-      user: [axios.get('http://localhost:8000/api/users')]
+      user: null // Inicialmente null
     };
   },
   methods: {
@@ -81,21 +80,6 @@ export default {
       this.showPassword = !this.showPassword;
     },
 
-    created() {
-      const rememberedUser = localStorage.getItem('rememberedUser');
-      if (rememberedUser) {
-        document.querySelector('.login__input[type="text"]').value = rememberedUser;
-      }
-    },
-
-    mounted() {
-    axios
-      .get('http://localhost:8000/api/users')
-      .then(response => {
-        this.user = response.data;
-      })
-    },
-
     forgotPassword() {
       const email = prompt("Por favor, ingrese su correo electrónico:");
 
@@ -111,9 +95,20 @@ export default {
         alert("El correo electrónico ingresado no está registrado.");
       }
     }
+  },
+  created() {
+    axios
+      .get('http://localhost:3000/api/users')
+      .then(response => {
+        this.users = response.data; 
+      })
+      .catch(error => {
+        console.error('Error al obtener los usuarios:', error);
+      });
   }
 };
 </script>
+
 
 <style scoped>
 @import '../styles/login.css';
