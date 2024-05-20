@@ -145,9 +145,6 @@
 
 <script>
 import axios from "axios";
-import games from "../assets/JSON/game_galaxy.games.json";
-import reviews from "../assets/JSON/reviews_games.json";
-
 
 export default {
   name: 'HomeGames',
@@ -163,8 +160,6 @@ export default {
 
   created() {
     this.games = games;
-    this.reviews = reviews;
-    // this.loadReviews();
   },
 
   filters: {
@@ -192,15 +187,22 @@ export default {
     }
   },
 
-mounted() {
-  axios
-    .get('http://localhost:8000/api/games')
-    .then(response => {
-      this.info = response.data;
-    })
+  mounted() {
+    axios
+      .get('http://localhost:3000/api/games')
+      .then(response => {
+        this.info = response.data;
+      });
+
+    axios
+      .get('http://localhost:3000/api/reviews')
+      .then(response => {
+        this.reviews = response.data;
+      });
   }
 }
 </script>
+
 
 
 <style scoped>

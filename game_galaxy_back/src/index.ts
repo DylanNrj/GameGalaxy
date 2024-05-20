@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import db from './config/db';
 import gamesRouter from './routes/gamesroutes';
 import reviewsRouter from './routes/reviewsroutes';
@@ -6,6 +7,8 @@ import usersRouter from './routes/usersroutes';
 
 const app = express();
 const port = process.env.PORT || 3000;
+
+app.use(cors()); 
 
 app.use(express.json());
 
