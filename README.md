@@ -64,6 +64,9 @@ Asegúrate de tener instalado lo siguiente en tu sistema:
   * Contraseña: $2y$10$jcbMoMbEo4PclxLWwqZCse3cgJd1qeJM86uUsNRn/njNcCo21w7tS
   * Usuario: DylanNrj
   * Contraseña: $2y$10$JzL8DPb2jgJP37tEVKllIOSlP0NG7fTpUXprhZa/GaidEQNVXt1da
+  * Usuario: ljavier2022
+  * Contraseña: 123456789
+
 
 
 
