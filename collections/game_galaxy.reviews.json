@@ -1,47 +1,360 @@
 [{
   "_id": {
-    "$oid": "66113d6425b3d42e6d0db772"
+    "$oid": "6649250ad4b9b25b391d434c"
   },
   "game": "Elden Ring",
-  "user": "Diego Barraza",
-  "rating": 7,
-  "comment": "Me gusto mucho pero es muy largo",
-  "updated_at": {
-    "$date": "2024-04-06T12:17:40.140Z"
-  },
-  "created_at": {
-    "$date": "2024-04-06T12:17:40.140Z"
-  }
+  "user": "TheMoys",
+  "rating": "4",
+  "comment": "Increíble"
 },
 {
   "_id": {
-    "$oid": "6621190bf4b0bea6dd007752"
+    "$oid": "6649250ad4b9b25b391d434d"
   },
   "game": "Elden Ring",
-  "gameId": {},
-  "user": "Diego Barraza",
-  "rating": 7,
-  "comment": "Me gusto mucho",
-  "updated_at": {
-    "$date": "2024-04-18T12:58:51.748Z"
-  },
-  "created_at": {
-    "$date": "2024-04-18T12:58:51.748Z"
-  }
+  "user": "Diegoza04",
+  "rating": "4.3",
+  "comment": "Waos"
 },
 {
   "_id": {
-    "$oid": "66211a45f4b0bea6dd007754"
+    "$oid": "6649250ad4b9b25b391d434e"
   },
   "game": "Elden Ring",
-  "gameId": "66102e9ce5a28dd3abda9d76",
-  "user": "Diego Barraza",
-  "rating": 7,
-  "comment": "Me gusto mucho",
-  "updated_at": {
-    "$date": "2024-04-18T13:04:05.811Z"
+  "user": "DylanNrj",
+  "rating": "4.8",
+  "comment": "Qué buen juego"
+},
+{
+  "_id": {
+    "$oid": "6649250ad4b9b25b391d434f"
   },
-  "created_at": {
-    "$date": "2024-04-18T13:04:05.811Z"
-  }
+  "game": "Elden Ring",
+  "user": "andriuw08",
+  "rating": "5",
+  "comment": "Muy entretenido"
+},
+{
+  "_id": {
+    "$oid": "6649250ad4b9b25b391d4350"
+  },
+  "game": "Persona 5 Royal",
+  "user": "TheMoys",
+  "rating": "4.8",
+  "comment": "Una experiencia de juego emocionante y llena de sorpresas."
+},
+{
+  "_id": {
+    "$oid": "6649250ad4b9b25b391d4351"
+  },
+  "game": "Persona 5 Royal",
+  "user": "Diegoza04",
+  "rating": "4.5",
+  "comment": "Los personajes son increíblemente profundos, y la trama es adictiva."
+},
+{
+  "_id": {
+    "$oid": "6649250ad4b9b25b391d4352"
+  },
+  "game": "Persona 5 Royal",
+  "user": "DylanNrj",
+  "rating": "4.7",
+  "comment": "Me encantó cada momento de este juego. Absolutamente asombroso."
+},
+{
+  "_id": {
+    "$oid": "6649250ad4b9b25b391d4353"
+  },
+  "game": "Persona 5 Royal",
+  "user": "andriuw08",
+  "rating": "4.6",
+  "comment": "La estética y la música son simplemente sublimes. Un juego que no se puede perder."
+},
+{
+  "_id": {
+    "$oid": "6649250ad4b9b25b391d4354"
+  },
+  "game": "Red Dead Redemption 2",
+  "user": "TheMoys",
+  "rating": "4.9",
+  "comment": "Una obra maestra en todos los aspectos. La historia es conmovedora y el mundo es vasto."
+},
+{
+  "_id": {
+    "$oid": "6649250ad4b9b25b391d4355"
+  },
+  "game": "Red Dead Redemption 2",
+  "user": "Diegoza04",
+  "rating": "4.7",
+  "comment": "Me enamoré de la inmersión y la atención al detalle. Rockstar hizo un trabajo increíble."
+},
+{
+  "_id": {
+    "$oid": "6649250ad4b9b25b391d4356"
+  },
+  "game": "Red Dead Redemption 2",
+  "user": "DylanNrj",
+  "rating": "4.8",
+  "comment": "Un juego que redefine las expectativas. Cada momento es memorable."
+},
+{
+  "_id": {
+    "$oid": "6649250ad4b9b25b391d4357"
+  },
+  "game": "Red Dead Redemption 2",
+  "user": "andriuw08",
+  "rating": "4.6",
+  "comment": "Una experiencia cinematográfica y emocionalmente potente. Bravo, Rockstar."
+},
+{
+  "_id": {
+    "$oid": "6649250ad4b9b25b391d4358"
+  },
+  "game": "The Legend of Zelda: Tears of the Kingdom",
+  "user": "TheMoys",
+  "rating": "4.5",
+  "comment": "Un viaje épico a través de un mundo mágico. Cada rincón es una maravilla visual."
+},
+{
+  "_id": {
+    "$oid": "6649250ad4b9b25b391d4359"
+  },
+  "game": "The Legend of Zelda: Tears of the Kingdom",
+  "user": "Diegoza04",
+  "rating": "4.3",
+  "comment": "Me sumergí por completo en la historia y la atmósfera. Una aventura inolvidable."
+},
+{
+  "_id": {
+    "$oid": "6649250ad4b9b25b391d435a"
+  },
+  "game": "The Legend of Zelda: Tears of the Kingdom",
+  "user": "DylanNrj",
+  "rating": "4.4",
+  "comment": "Los puzles son desafiantes y gratificantes. Un juego que te absorbe por completo."
+},
+{
+  "_id": {
+    "$oid": "6649250ad4b9b25b391d435b"
+  },
+  "game": "The Legend of Zelda: Tears of the Kingdom",
+  "user": "andriuw08",
+  "rating": "4.6",
+  "comment": "La música y el diseño de niveles son simplemente magistrales. Un verdadero tesoro."
+},
+{
+  "_id": {
+    "$oid": "6649250ad4b9b25b391d435c"
+  },
+  "game": "Baldur's Gate 3",
+  "user": "TheMoys",
+  "rating": "4.3",
+  "comment": "Una experiencia de rol profunda y emocionante. No puedo esperar para jugar más."
+},
+{
+  "_id": {
+    "$oid": "6649250ad4b9b25b391d435d"
+  },
+  "game": "Baldur's Gate 3",
+  "user": "Diegoza04",
+  "rating": "4.1",
+  "comment": "Me encanta la libertad y las decisiones significativas. Un RPG increíblemente inmersivo."
+},
+{
+  "_id": {
+    "$oid": "6649250ad4b9b25b391d435e"
+  },
+  "game": "Baldur's Gate 3",
+  "user": "DylanNrj",
+  "rating": "4.2",
+  "comment": "El combate estratégico y la narrativa cautivadora hacen de este juego una joya."
+},
+{
+  "_id": {
+    "$oid": "6649250ad4b9b25b391d435f"
+  },
+  "game": "Baldur's Gate 3",
+  "user": "andriuw08",
+  "rating": "4.4",
+  "comment": "Me siento completamente inmerso en este mundo. Un juego que supera las expectativas."
+},
+{
+  "_id": {
+    "$oid": "6649250ad4b9b25b391d4360"
+  },
+  "game": "The Legend of Zelda: Breath of the Wild",
+  "user": "TheMoys",
+  "rating": "4.8",
+  "comment": "Una obra maestra de la exploración y la libertad. Cada descubrimiento es emocionante."
+},
+{
+  "_id": {
+    "$oid": "6649250ad4b9b25b391d4361"
+  },
+  "game": "The Legend of Zelda: Breath of the Wild",
+  "user": "Diegoza04",
+  "rating": "4.6",
+  "comment": "Me perdí durante horas explorando este hermoso mundo. Un juego que deja una impresión duradera."
+},
+{
+  "_id": {
+    "$oid": "6649250ad4b9b25b391d4362"
+  },
+  "game": "The Legend of Zelda: Breath of the Wild",
+  "user": "DylanNrj",
+  "rating": "4.7",
+  "comment": "Los santuarios son desafiantes y gratificantes. Un juego que siempre ofrece algo nuevo."
+},
+{
+  "_id": {
+    "$oid": "6649250ad4b9b25b391d4363"
+  },
+  "game": "The Legend of Zelda: Breath of the Wild",
+  "user": "andriuw08",
+  "rating": "4.5",
+  "comment": "La física y la interacción con el entorno son simplemente asombrosas. Un juego que redefine el género."
+},
+{
+  "_id": {
+    "$oid": "6649250ad4b9b25b391d4364"
+  },
+  "game": "Super Mario Odyssey",
+  "user": "TheMoys",
+  "rating": "4.5",
+  "comment": "Un regreso glorioso a la forma clásica de Mario. La creatividad está en su punto más alto."
+},
+{
+  "_id": {
+    "$oid": "6649250ad4b9b25b391d4365"
+  },
+  "game": "Super Mario Odyssey",
+  "user": "Diegoza04",
+  "rating": "4.3",
+  "comment": "Me encanta la variedad de niveles y los secretos para descubrir. Un juego que nunca deja de sorprender."
+},
+{
+  "_id": {
+    "$oid": "6649250ad4b9b25b391d4366"
+  },
+  "game": "Super Mario Odyssey",
+  "user": "DylanNrj",
+  "rating": "4.4",
+  "comment": "Los controles son suaves y responsivos. La sonrisa no se borrará de tu rostro mientras juegas."
+},
+{
+  "_id": {
+    "$oid": "6649250ad4b9b25b391d4367"
+  },
+  "game": "Super Mario Odyssey",
+  "user": "andriuw08",
+  "rating": "4.6",
+  "comment": "Una delicia visual y auditiva. Nintendo ha vuelto a hacerlo con este título."
+},
+{
+  "_id": {
+    "$oid": "6649250ad4b9b25b391d4368"
+  },
+  "game": "Super Smash Bros. Ultimate",
+  "user": "TheMoys",
+  "rating": "4.7",
+  "comment": "Una celebración de la historia de los videojuegos. Cada personaje es un tributo a la diversión."
+},
+{
+  "_id": {
+    "$oid": "6649250ad4b9b25b391d4369"
+  },
+  "game": "Super Smash Bros. Ultimate",
+  "user": "Diegoza04",
+  "rating": "4.5",
+  "comment": "Los combates son emocionantes y siempre hay algo nuevo que descubrir. Un must-have para cualquier fan de los juegos."
+},
+{
+  "_id": {
+    "$oid": "6649250ad4b9b25b391d436a"
+  },
+  "game": "Super Smash Bros. Ultimate",
+  "user": "DylanNrj",
+  "rating": "4.6",
+  "comment": "La cantidad de contenido es asombrosa. Nunca me canso de jugar con amigos."
+},
+{
+  "_id": {
+    "$oid": "6649250ad4b9b25b391d436b"
+  },
+  "game": "Super Smash Bros. Ultimate",
+  "user": "andriuw08",
+  "rating": "4.8",
+  "comment": "Una experiencia multijugador brillante. Toneladas de contenido y personajes."
+},
+{
+  "_id": {
+    "$oid": "6649250ad4b9b25b391d436c"
+  },
+  "game": "The Last of Us Remastered",
+  "user": "TheMoys",
+  "rating": "4.9",
+  "comment": "Una obra maestra del storytelling. La remasterización eleva aún más este clásico moderno."
+},
+{
+  "_id": {
+    "$oid": "6649250ad4b9b25b391d436d"
+  },
+  "game": "The Last of Us Remastered",
+  "user": "Diegoza04",
+  "rating": "4.7",
+  "comment": "La conexión emocional con los personajes es increíble. Una experiencia que se queda contigo mucho después de haberla terminado."
+},
+{
+  "_id": {
+    "$oid": "6649250ad4b9b25b391d436e"
+  },
+  "game": "The Last of Us Remastered",
+  "user": "DylanNrj",
+  "rating": "4.8",
+  "comment": "Los gráficos y la actuación son sobresalientes. Un juego que te deja sin aliento hasta el final."
+},
+{
+  "_id": {
+    "$oid": "6649250ad4b9b25b391d436f"
+  },
+  "game": "The Last of Us Remastered",
+  "user": "andriuw08",
+  "rating": "4.6",
+  "comment": "Una narrativa envolvente y un gameplay emocionante. Una experiencia que merece ser vivida."
+},
+{
+  "_id": {
+    "$oid": "6649250ad4b9b25b391d4370"
+  },
+  "game": "Grand Theft Auto V",
+  "user": "TheMoys",
+  "rating": "4.8",
+  "comment": "Un mundo abierto vasto y lleno de vida. Las misiones y la diversión son interminables."
+},
+{
+  "_id": {
+    "$oid": "6649250ad4b9b25b391d4371"
+  },
+  "game": "Grand Theft Auto V",
+  "user": "Diegoza04",
+  "rating": "4.6",
+  "comment": "La historia es absorbente y los personajes son memorables. Rockstar lo ha vuelto a hacer."
+},
+{
+  "_id": {
+    "$oid": "6649250ad4b9b25b391d4372"
+  },
+  "game": "Grand Theft Auto V",
+  "user": "DylanNrj",
+  "rating": "4.7",
+  "comment": "La libertad para explorar y causar caos es emocionante. Nunca me canso de jugarlo."
+},
+{
+  "_id": {
+    "$oid": "6649250ad4b9b25b391d4373"
+  },
+  "game": "Grand Theft Auto V",
+  "user": "andriuw08",
+  "rating": "4.9",
+  "comment": "Una obra maestra del mundo abierto. La atención al detalle es fenomenal. Un clásico moderno."
 }]
