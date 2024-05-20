@@ -17,7 +17,7 @@ Asegúrate de tener instalado lo siguiente en tu sistema:
 - PhP en su version 8.2
 - MongoDB y su extension para php en su version 1.17.1 disponible en el siguiente enlace https://github.com/mongodb/mongo-php-driver/releases/
 - Agregar en el php.ini la extencion "extension=mongodb"
-- Inslación modules de node y librerias desde un terminal dentro de la carpeta "game_galaxy_front" y "game_galaxy_back" ejecutar el comando "npm install"
+- Instalación modules de node y librerias desde un terminal dentro de la carpeta "game_galaxy_front" y "game_galaxy_back" ejecutar el comando "npm install"
 
 ### Instalación
 
