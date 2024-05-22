@@ -34,3 +34,17 @@ export const updateGame = async (req: Request, res: Response) => {
     res.status(500).json({ message: 'Error al actualizar el juego', error })
   }
 };
+
+export const deleteGame = async (req: Request, res: Response) => {
+  try {
+    const deletedGame = await Game.findByIdAndDelete(req.params.id)
+    if (deletedGame) {
+      res.json({ message: 'Juego eliminado con éxito' })
+    } else {
+      res.status(404).json({ message: 'No se encontró el juego con el ID proporcionado' })
+    }
+  } catch (error: any) {
+    console.error('Error al eliminar el juego:', error)
+    res.status(500).json({ message: 'Error al eliminar el juego', error })
+  }
+};
