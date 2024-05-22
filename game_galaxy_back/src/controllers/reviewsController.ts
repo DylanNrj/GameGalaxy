@@ -35,5 +35,18 @@ export const updateReview = async (req: Request, res: Response) => {
     res.status(500).json({ message: 'Error al actualizar la review', error });
   }
 };
+export const deleteReview = async (req: Request, res: Response) => {
+  try {
+    const deletedReview = await Review.findByIdAndDelete(req.params.id);
+    if (!deletedReview) {
+      return res.status(404).json({ message: 'Review no encontrada' });
+    }
+    res.json({ message: 'Review eliminada correctamente' });
+  } catch (error) {
+    console.error('Error al eliminar la review:', error);
+    res.status(500).json({ message: 'Error al eliminar la review', error });
+  }
+};
+
 
 
