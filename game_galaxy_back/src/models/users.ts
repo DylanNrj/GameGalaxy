@@ -18,4 +18,10 @@ const UserSchema = new Schema({
 
 const User = mongoose.model<IUser>('User', UserSchema);
 
+declare module 'express-session' {
+  interface SessionData {
+    userId: string;
+  }
+}
+
 export default User;
