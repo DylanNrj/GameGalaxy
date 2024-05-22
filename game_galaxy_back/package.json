@@ -19,9 +19,11 @@
     "typescript": "^5.4.5"
   },
   "dependencies": {
+    "@types/mongodb": "^4.0.7",
     "@types/mongoose": "^5.11.97",
     "cors": "^2.8.5",
     "express": "^4.19.2",
+    "mongodb": "^6.6.2",
     "mongoose": "^8.4.0"
   }
 }
