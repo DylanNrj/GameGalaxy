@@ -22,7 +22,7 @@ Asegúrate de tener instalado lo siguiente en tu sistema:
 ### Instalación
 
 1. Clona este repositorio en tu máquina local.
-2. Poner en tu Mongodb, las colecciones que van incorporadas en este proyecto.
+2. Poner en tu Mongodb, las colecciones que van incorporadas en este proyecto que son games, reviews y users.
 3. Inicializar el backend se ocupa el comando "npm start" y para inicializar el frontend se ocupa "npm run serve".
 
 
