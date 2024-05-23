@@ -23,19 +23,47 @@
     </v-app-bar>
     <div class="fix-content">
       <div class="container-button-all-games">
+        <div>
         <span class="titles"> Últimos Lanzamientos </span>
-        <v-btn elevation="2" href="#all-games" class="button-all-games text-btn">
-          Ver todos
-        </v-btn>
+        </div>
+        <div class="container-button-all-games" style="gap: 16px">
+          <div>
+            <v-btn elevation="2" href="#all-games" class="button-all-games text-btn">
+              Ver todos
+            </v-btn>
+          </div>
+          <div>
+            <v-btn elevation="2" class="button-all-games text-btn" @click="createGameModal()">
+                Crear
+            </v-btn>
+          </div>
+        </div>
       </div>
       <div>
         <div class="container-preview-games">
-          <v-card v-for="(game, index) in info" :key="index" class="mx-auto my-12 card-game">
+          <v-card v-for="(game, index) in info" :key="index" class="mx-auto my-12 card-game" width="300">
             <v-img height="350" :src="game.image_url"></v-img>
 
             <v-card-title>
               <span class="title-cards"> {{ game.name }} </span>
             </v-card-title>
+
+            <v-card-subtitle>
+              <v-btn
+                icon
+                small
+                @click="editGameModal(game)"
+              >
+                <v-icon>mdi-pencil</v-icon>
+              </v-btn>
+              <v-btn
+                icon
+                small
+                @click="deleteGame(game)"
+              >
+                <v-icon>mdi-delete  </v-icon>
+              </v-btn>
+            </v-card-subtitle>
 
             <v-card-text>
               <v-row align="center" class="mx-0">
@@ -58,7 +86,7 @@
         </div>
       </div>
     </div>
-          <div style="padding-top: 32px;" id="all-games">
+    <div style="padding-top: 32px;" id="all-games">
         <div>
           <span class="titles">Todos los VideoJuegos</span>
         </div>
@@ -110,11 +138,14 @@
         <v-dialog v-model="dialog" max-width="600">
           <v-card v-if="selectedGame">
             <div class="content-comments">
-              <v-card-title>
+              <v-card-title class="fix-content-title">
                 <span class="titleS"> {{ selectedGame.name }} - Opiniones </span>
+                <v-btn class="text-btn" text @click="isCreating = true" v-if="!isCreating">
+                  Añadir
+                </v-btn>
               </v-card-title>
               <v-card-text>
-                <div class="comments-contain">
+                <div class="comments-contain" v-if="!isCreating && !isEditing">
                   <div v-for="(review, index) in selectedReviews" :key="index">
                     <v-row>
                       <v-col cols="2">
@@ -127,18 +158,308 @@
                       <v-col>
                         <span class="description-text"> Comentario: {{ review.comment }} </span>
                       </v-col>
+                        <v-col>
+                          <v-btn
+                            icon
+                            small
+                            @click="startEditingReview(review)"
+                          >
+                            <v-icon>mdi-pencil</v-icon>
+                          </v-btn>
+                          <v-btn
+                            icon
+                            small
+                            @click="deleteReview(review)"
+                          >
+                            <v-icon>mdi-delete  </v-icon>
+                          </v-btn>
+                        </v-col>
                     </v-row>
                   </div>
+                </div>
+                <div class="comments-contain" v-else-if="isEditing">
+                  <v-row>
+                    <v-col>
+                      <v-text-field
+                        v-model="editReviewData.user"
+                        outlined
+                        dense
+                        label="Nombre del Usuario"
+                        required
+                      ></v-text-field>
+                    </v-col>
+                    <v-col>
+                      <v-text-field
+                        v-model="editReviewData.rating"
+                        outlined
+                        dense
+                        label="Rating del VideoJuego"
+                        required
+                      ></v-text-field>
+                    </v-col>
+                    <v-col>
+                      <v-text-field
+                        v-model="editReviewData.comment"
+                        outlined
+                        dense
+                        label="Comentario del VideoJuego"
+                        required
+                      ></v-text-field>
+                    </v-col>
+                  </v-row>
+                </div>
+                <div class="comments-contain" v-else-if="isCreating && !isEditing">
+                    <v-row>
+                      <v-col>
+                        <v-text-field
+                          v-model="newReview.user"
+                          outlined
+                          dense
+                          label="Nombre del Usuario"
+                          required
+                        ></v-text-field>
+                      </v-col>
+                      <v-col>
+                        <v-text-field
+                          v-model="newReview.rating"
+                          outlined
+                          dense
+                          label="Rating del VideoJuego"
+                          required
+                        ></v-text-field>
+                      </v-col>
+                      <v-col>
+                        <v-text-field
+                          v-model="newReview.comment"
+                          outlined
+                          dense
+                          label="Comentario del VideoJuego"
+                          required
+                        ></v-text-field>
+                      </v-col>
+                    </v-row>
                 </div>
               </v-card-text>
               <v-card-actions class="position-btn-comments">
                 <v-btn class="text-btn" text @click="closeDialog">
                   Cerrar
                 </v-btn>
+                <v-btn class="text-btn" text @click="addReview" v-if="isCreating">
+                  Añadir
+                </v-btn>
+                <v-btn class="text-btn" text @click="editReview" v-if="isEditing">
+                  Guardar
+                </v-btn>
               </v-card-actions>
             </div>
           </v-card>
         </v-dialog>
+
+        <v-dialog v-model="dialogCreate" max-width="600">
+          <v-card>
+              <v-card-title>
+                <span class="titleS"> Crear un nuevo VideoJuego </span>
+              </v-card-title>
+               <v-card-text>
+          <v-row>
+            <v-col>
+              <v-text-field
+                v-model="newGame.name"
+                outlined
+                dense
+                label="Nombre del VideoJuego"
+                required
+              ></v-text-field>
+            </v-col>
+
+            <v-col>
+              <v-text-field
+                v-model="newGame.rating"
+                outlined
+                dense
+                label="Rating del VideoJuego"
+                required
+              ></v-text-field>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col>
+              <v-text-field
+                v-model="newGame.gender"
+                outlined
+                dense
+                label="Género"
+                required
+              ></v-text-field>
+            </v-col>
+
+            <v-col>
+              <v-text-field
+                v-model="newGame.description"
+                outlined
+                dense
+                label="Breve descripción del VideoJuego"
+                required
+              ></v-text-field>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col>
+              <v-text-field
+                v-model="newGame.image_url"
+                outlined
+                dense
+                label="URL de la imagen"
+                required
+              ></v-text-field>
+            </v-col>
+
+            <v-col>
+              <v-text-field
+                v-model="newGame.num_reviews"
+                outlined
+                dense
+                label="Número de opiniones"
+                required
+                type="number"
+              ></v-text-field>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col>
+              <v-text-field
+                v-model="newGame.platform"
+                outlined
+                dense
+                label="Plataforma"
+                required
+              ></v-text-field>
+            </v-col>
+            <v-col>
+              <v-text-field
+                v-model="newGame.release_date"
+                outlined
+                dense
+                label="Fecha de lanzamiento"
+                required
+                type="date"
+              ></v-text-field>
+            </v-col>
+          </v-row>
+        </v-card-text>
+              <v-card-actions class="position-btn-comments">
+                <v-btn class="text-btn" text @click="closeDialogCreate">
+                  Cerrar
+                </v-btn>
+                <v-btn class="text-btn" text @click="addGame">
+                  Añadir
+                </v-btn>
+              </v-card-actions>
+          </v-card>
+        </v-dialog>
+
+    <v-dialog v-model="dialogEdit" max-width="600">
+      <v-card>
+        <v-card-title>
+          <span class="titleS"> Editar VideoJuego </span>
+        </v-card-title>
+        <v-card-text>
+          <v-row>
+            <v-col>
+              <v-text-field
+                v-model="newGame.name"
+                outlined
+                dense
+                label="Nombre del VideoJuego"
+                required
+              ></v-text-field>
+            </v-col>
+
+            <v-col>
+              <v-text-field
+                v-model="newGame.rating"
+                outlined
+                dense
+                label="Rating del VideoJuego"
+                required
+              ></v-text-field>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col>
+              <v-text-field
+                v-model="newGame.genre"
+                outlined
+                dense
+                label="Género"
+                required
+              ></v-text-field>
+            </v-col>
+
+            <v-col>
+              <v-text-field
+                v-model="newGame.description"
+                outlined
+                dense
+                label="Breve descripción del VideoJuego"
+                required
+              ></v-text-field>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col>
+              <v-text-field
+                v-model="newGame.image_url"
+                outlined
+                dense
+                label="URL de la imagen"
+                required
+              ></v-text-field>
+            </v-col>
+
+            <v-col>
+              <v-text-field
+                v-model="newGame.num_reviews"
+                outlined
+                dense
+                label="Número de opiniones"
+                required
+                type="number"
+              ></v-text-field>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col>
+              <v-text-field
+                v-model="newGame.platform"
+                outlined
+                dense
+                label="Plataforma"
+                required
+              ></v-text-field>
+            </v-col>
+            <v-col>
+              <v-text-field
+                v-model="newGame.release_date"
+                outlined
+                dense
+                label="Fecha de lanzamiento"
+                required
+                type="date"
+              ></v-text-field>
+            </v-col>
+          </v-row>
+        </v-card-text>
+        <v-card-actions class="position-btn-comments">
+          <v-btn class="text-btn" text @click="closeDialogEdit">
+            Cerrar
+          </v-btn>
+          <v-btn class="text-btn" text @click="editGame">
+            Guardar
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
       </div>
   </div>
 </template>
@@ -153,10 +474,38 @@ export default {
     games: [],
     reviews: [],
     dialog: false,
+    dialogCreate: false,
+    dialogEdit: false,
     selectedGame: null,
     selectedReviews: [],
-    info: []
-  }),
+    info: [],
+    isCreating: false,
+    isEditing: false,
+    newGame: {
+      name: '',
+      rating: '',
+      genre: '',
+      description: '',
+      image_url: '',
+      num_reviews: 0,
+      gender: '',
+      platform: '',
+      release_date: ''
+    },
+    newReview: {
+      user: '',
+      rating: '',
+      comment: '',
+      game: ''
+    },
+    editReviewData: {
+      _id: '',
+      user: '',
+      rating: '',
+      comment: '',
+      game: ''
+    }
+    }),
 
   created() {
     this.games = games;
@@ -178,14 +527,178 @@ export default {
       this.selectedGame = game;
       this.selectedReviews = this.reviews.filter(review => review.game === game.name);
       this.dialog = true;
+      this.newReview.game = game.name
     },
 
     closeDialog() {
       this.dialog = false;
+      this.isCreating = false;
+      this.isEditing = false
       this.selectedGame = null;
       this.selectedReviews = [];
+    },
+
+    createGameModal() {
+      this.newGame = {}
+      this.dialogCreate = true;
+    },
+
+    closeDialogCreate() {
+      this.dialogCreate = false;
+    },
+
+    editGameModal(game) {
+      this.selectedGame = game;
+      this.newGame = { ...game };
+      this.dialogEdit = true;
+    },
+
+    closeDialogEdit() {
+      this.dialogEdit = false;
+    },
+
+    startEditingReview(review){
+      this.editReviewData = { ...review };
+      this.isEditing = true;
+    },
+
+    addGame() {
+        axios.post('http://localhost:3000/api/games', this.newGame)
+          .then(response => {
+            this.info.push(response.data);
+            this.dialogCreate = false;
+            this.newGame = {
+              name: '',
+              rating: '',
+              genre: '',
+              description: '',
+              image_url: '',
+              num_reviews: 0,
+              gender: '',
+              platform: '',
+              release_date: ''
+            };
+          })
+          .catch(error => {
+            console.error('Error al registrar:', error);
+          });
+      },
+
+    editGame() {
+      const gameId = this.selectedGame._id || this.selectedGame.id;
+      if (!gameId) {
+        console.error('El ID del juego no está definido');
+        return;
+      }
+
+      axios.put(`http://localhost:3000/api/games/${gameId}`, this.newGame)
+        .then(response => {
+          const index = this.info.findIndex(game => game._id === gameId || game.id === gameId);
+          if (index !== -1) {
+            this.info.splice(index, 1, response.data);
+          }
+          this.dialogEdit = false; // Cierra el modal
+          this.newGame = { 
+            name: '',
+            rating: '',
+            genre: '',
+            description: '',
+            image_url: '',
+            num_reviews: 0,
+            gender: '',
+            platform: '',
+            release_date: ''
+          };
+        })
+        .catch(error => {
+          console.error('Error al actualizar:', error);
+        });
+    },
+
+  deleteGame(game) {
+      const gameId = game._id || game.id;
+      if (!gameId) {
+        console.error('El ID del juego no está definido');
+        return;
+      }
+
+      axios.delete(`http://localhost:3000/api/games/${gameId}`)
+        .then(() => {
+          const index = this.info.findIndex(g => g._id === gameId || g.id === gameId);
+          if (index !== -1) {
+            this.info.splice(index, 1);
+          }
+        })
+        .catch(error => {
+          console.error('Error al eliminar el juego:', error);
+        });
+    },
+
+    addReview() {
+      axios.post('http://localhost:3000/api/reviews', this.newReview)
+        .then(response => {
+          this.selectedReviews.push(response.data);
+          this.newReview = {
+            user: '',
+            rating: '',
+            comment: '',
+            game: ''
+          };
+          this.isCreating = false;
+        })
+        .catch(error => {
+          console.error('Error al registrar:', error);
+        });
+    },
+
+editReview() {
+      const reviewId = this.editReviewData._id;
+      if (!reviewId) {
+        console.error('El ID de la review no está definido');
+        return;
+      }
+
+      axios.put(`http://localhost:3000/api/reviews/${reviewId}`, this.editReviewData)
+        .then(response => {
+          const index = this.selectedReviews.findIndex(review => review._id === reviewId);
+          if (index !== -1) {
+            this.selectedReviews.splice(index, 1, response.data);
+          }
+          this.isEditing = false;
+          this.editReviewData = {
+            _id: '',
+            user: '',
+            rating: '',
+            comment: '',
+            game: ''
+          };
+        })
+        .catch(error => {
+          console.error('Error al actualizar la review:', error);
+        });
+    },
+
+    deleteReview(review) {
+      const reviewId = review._id;
+      if (!reviewId) {
+        console.error('El ID de la review no está definido');
+        return;
+      }
+
+      axios.delete(`http://localhost:3000/api/reviews/${reviewId}`)
+        .then(() => {
+          const index = this.selectedReviews.findIndex(r => r._id === reviewId);
+          if (index !== -1) {
+            this.selectedReviews.splice(index, 1);
+          }
+        })
+        .catch(error => {
+          console.error('Error al eliminar la review:', error);
+        });
     }
-  },
+},
+
+
 
   mounted() {
     axios
@@ -202,6 +715,7 @@ export default {
   }
 }
 </script>
+
 
 
 
