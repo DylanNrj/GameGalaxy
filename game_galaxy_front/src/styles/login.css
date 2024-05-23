@@ -454,3 +454,7 @@ img {
     color: hsl(244, 4%, 36%);
   }
 
+  .fix-content-title{
+    display: flex;
+    justify-content: space-between;
+  }	
