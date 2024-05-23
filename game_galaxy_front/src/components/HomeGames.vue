@@ -140,12 +140,12 @@
             <div class="content-comments">
               <v-card-title class="fix-content-title">
                 <span class="titleS"> {{ selectedGame.name }} - Opiniones </span>
-                <v-btn class="text-btn" text @click="isCreating = true" v-if="">
+                <v-btn class="text-btn" text @click="isCreating = true" v-if="!isCreating">
                   Añadir
                 </v-btn>
               </v-card-title>
               <v-card-text>
-                <div class="comments-contain" v-if="!isCreating">
+                <div class="comments-contain" v-if="!isCreating && !isEditing">
                   <div v-for="(review, index) in selectedReviews" :key="index">
                     <v-row>
                       <v-col cols="2">
@@ -158,13 +158,61 @@
                       <v-col>
                         <span class="description-text"> Comentario: {{ review.comment }} </span>
                       </v-col>
+                        <v-col>
+                          <v-btn
+                            icon
+                            small
+                            @click="startEditingReview(review)"
+                          >
+                            <v-icon>mdi-pencil</v-icon>
+                          </v-btn>
+                          <v-btn
+                            icon
+                            small
+                            @click="deleteReview(review)"
+                          >
+                            <v-icon>mdi-delete  </v-icon>
+                          </v-btn>
+                        </v-col>
                     </v-row>
                   </div>
                 </div>
-                <div class="comments-contain" v-else>
+                <div class="comments-contain" v-else-if="isEditing">
+                  <v-row>
+                    <v-col>
+                      <v-text-field
+                        v-model="editReviewData.user"
+                        outlined
+                        dense
+                        label="Nombre del Usuario"
+                        required
+                      ></v-text-field>
+                    </v-col>
+                    <v-col>
+                      <v-text-field
+                        v-model="editReviewData.rating"
+                        outlined
+                        dense
+                        label="Rating del VideoJuego"
+                        required
+                      ></v-text-field>
+                    </v-col>
+                    <v-col>
+                      <v-text-field
+                        v-model="editReviewData.comment"
+                        outlined
+                        dense
+                        label="Comentario del VideoJuego"
+                        required
+                      ></v-text-field>
+                    </v-col>
+                  </v-row>
+                </div>
+                <div class="comments-contain" v-else-if="isCreating && !isEditing">
                     <v-row>
                       <v-col>
                         <v-text-field
+                          v-model="newReview.user"
                           outlined
                           dense
                           label="Nombre del Usuario"
@@ -173,6 +221,7 @@
                       </v-col>
                       <v-col>
                         <v-text-field
+                          v-model="newReview.rating"
                           outlined
                           dense
                           label="Rating del VideoJuego"
@@ -181,6 +230,7 @@
                       </v-col>
                       <v-col>
                         <v-text-field
+                          v-model="newReview.comment"
                           outlined
                           dense
                           label="Comentario del VideoJuego"
@@ -195,6 +245,9 @@
                   Cerrar
                 </v-btn>
                 <v-btn class="text-btn" text @click="addReview" v-if="isCreating">
+                  Añadir
+                </v-btn>
+                <v-btn class="text-btn" text @click="editReview" v-if="isEditing">
                   Guardar
                 </v-btn>
               </v-card-actions>
@@ -427,6 +480,7 @@ export default {
     selectedReviews: [],
     info: [],
     isCreating: false,
+    isEditing: false,
     newGame: {
       name: '',
       rating: '',
@@ -437,6 +491,19 @@ export default {
       gender: '',
       platform: '',
       release_date: ''
+    },
+    newReview: {
+      user: '',
+      rating: '',
+      comment: '',
+      game: ''
+    },
+    editReviewData: {
+      _id: '',
+      user: '',
+      rating: '',
+      comment: '',
+      game: ''
     }
     }),
 
@@ -460,11 +527,13 @@ export default {
       this.selectedGame = game;
       this.selectedReviews = this.reviews.filter(review => review.game === game.name);
       this.dialog = true;
+      this.newReview.game = game.name
     },
 
     closeDialog() {
       this.dialog = false;
       this.isCreating = false;
+      this.isEditing = false
       this.selectedGame = null;
       this.selectedReviews = [];
     },
@@ -488,12 +557,17 @@ export default {
       this.dialogEdit = false;
     },
 
+    startEditingReview(review){
+      this.editReviewData = { ...review };
+      this.isEditing = true;
+    },
+
     addGame() {
         axios.post('http://localhost:3000/api/games', this.newGame)
           .then(response => {
-            this.info.push(response.data); // Añade el nuevo juego a la lista
-            this.dialogCreate = false; // Cierra el modal
-            this.newGame = { // Resetea los campos del formulario
+            this.info.push(response.data);
+            this.dialogCreate = false;
+            this.newGame = {
               name: '',
               rating: '',
               genre: '',
@@ -521,10 +595,10 @@ export default {
         .then(response => {
           const index = this.info.findIndex(game => game._id === gameId || game.id === gameId);
           if (index !== -1) {
-            this.info.splice(index, 1, response.data); // Actualiza el juego en la lista
+            this.info.splice(index, 1, response.data);
           }
           this.dialogEdit = false; // Cierra el modal
-          this.newGame = { // Resetea los campos del formulario
+          this.newGame = { 
             name: '',
             rating: '',
             genre: '',
@@ -541,25 +615,90 @@ export default {
         });
     },
 
-deleteGame(game) {
-    const gameId = game._id || game.id;
-    if (!gameId) {
-      console.error('El ID del juego no está definido');
-      return;
-    }
+  deleteGame(game) {
+      const gameId = game._id || game.id;
+      if (!gameId) {
+        console.error('El ID del juego no está definido');
+        return;
+      }
 
-    axios.delete(`http://localhost:3000/api/games/${gameId}`)
-      .then(() => {
-        const index = this.info.findIndex(g => g._id === gameId || g.id === gameId);
-        if (index !== -1) {
-          this.info.splice(index, 1); // Elimina el juego de la lista
-        }
-      })
-      .catch(error => {
-        console.error('Error al eliminar el juego:', error);
-      });
-  }
-  },
+      axios.delete(`http://localhost:3000/api/games/${gameId}`)
+        .then(() => {
+          const index = this.info.findIndex(g => g._id === gameId || g.id === gameId);
+          if (index !== -1) {
+            this.info.splice(index, 1);
+          }
+        })
+        .catch(error => {
+          console.error('Error al eliminar el juego:', error);
+        });
+    },
+
+    addReview() {
+      axios.post('http://localhost:3000/api/reviews', this.newReview)
+        .then(response => {
+          this.selectedReviews.push(response.data);
+          this.newReview = {
+            user: '',
+            rating: '',
+            comment: '',
+            game: ''
+          };
+          this.isCreating = false;
+        })
+        .catch(error => {
+          console.error('Error al registrar:', error);
+        });
+    },
+
+editReview() {
+      const reviewId = this.editReviewData._id;
+      if (!reviewId) {
+        console.error('El ID de la review no está definido');
+        return;
+      }
+
+      axios.put(`http://localhost:3000/api/reviews/${reviewId}`, this.editReviewData)
+        .then(response => {
+          const index = this.selectedReviews.findIndex(review => review._id === reviewId);
+          if (index !== -1) {
+            this.selectedReviews.splice(index, 1, response.data);
+          }
+          this.isEditing = false;
+          this.editReviewData = {
+            _id: '',
+            user: '',
+            rating: '',
+            comment: '',
+            game: ''
+          };
+        })
+        .catch(error => {
+          console.error('Error al actualizar la review:', error);
+        });
+    },
+
+    deleteReview(review) {
+      const reviewId = review._id;
+      if (!reviewId) {
+        console.error('El ID de la review no está definido');
+        return;
+      }
+
+      axios.delete(`http://localhost:3000/api/reviews/${reviewId}`)
+        .then(() => {
+          const index = this.selectedReviews.findIndex(r => r._id === reviewId);
+          if (index !== -1) {
+            this.selectedReviews.splice(index, 1);
+          }
+        })
+        .catch(error => {
+          console.error('Error al eliminar la review:', error);
+        });
+    }
+},
+
+
 
   mounted() {
     axios
