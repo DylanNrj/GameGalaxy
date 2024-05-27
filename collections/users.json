@@ -53,4 +53,18 @@
   "created_at": {
     "$date": "2024-04-07T22:04:02.775Z"
   }
+},
+{
+  "_id": {
+    "$oid": "66130e833e64865272032999"
+  },
+  "user": "ljavier2022",
+  "email": "ljavier2022@gmail.com",
+  "password": "123456789",
+  "updated_at": {
+    "$date": "2024-04-07T21:22:11.104Z"
+  },
+  "created_at": {
+    "$date": "2024-04-07T21:22:11.104Z"
+  }
 }]
