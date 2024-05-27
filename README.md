@@ -17,7 +17,7 @@ Asegúrate de tener instalado lo siguiente en tu sistema:
 - PhP en su version 8.2
 - MongoDB y su extension para php en su version 1.17.1 disponible en el siguiente enlace https://github.com/mongodb/mongo-php-driver/releases/
 - Agregar en el php.ini la extencion "extension=mongodb"
-- Instalación modules de node y librerias desde un terminal dentro de la carpeta "game_galaxy_front" y "game_galaxy_back" ejecutar el comando "npm install"
+- Instalación modules de node y librerias desde un terminal dentro de la carpeta "game_galaxy_front" y "game_galaxy_back" ejecutar el comando "npm install", en las dos carpetas se tiene que hacer el npm install.
 
 ### Instalación
 
@@ -71,8 +71,15 @@ Asegúrate de tener instalado lo siguiente en tu sistema:
   * Usuario: ljavier2022
   * Contraseña: 123456789
 
+## Instrucciones para poder crear automaticamente la base de datos cuando se levanta el back
 
+-Para poder hacer automaticamente la base de datos en MongoDB, primero que todo se tienen que seguir estos pasos:
+* Ir a la rama Diego_Barraza(https://github.com/DylanNrj/GameGalaxy/tree/Diego_Barraza)
+* Seguir los mismos pasos que como lo habiamos hecho la primera vez en la rama main, primero hay que meternos a la carpeta "game_galaxy_back" y ejecutar el comando "npm install",de ahi se tiene que hacer lo mismo pero en la carpeta "game_galaxy_front".
+* Ahora una vez instalados los modules, nos tenemos que ir a la carpeta "game_galaxy_back" y ejecutar el comando "npm start" para asi levantar el back, en la terminal saldra que las colecciones y sus datos se estan creando(Advertencia:para que la base de datos se cree automaticamente en MongoDB, hay que tener el MongoDB encendido y revisar de que no hay ninguna base de datos con el nombre "GameGalaxy", en el caso de que haya, eliminarla y hacer este paso).
+* Nos vamos a MongoDB y veremos que la base de datos con todas sus colecciones y datos estan creadas.
 
+Lastimosamente, no sabemos porque, pero el front una vez levantado no puede consumir los datos de esa base de datos, pero todo lo del back si funciona, si quiere hasta puede crear automaticamente la base de datos y pasarse a la rama main y vera que ahi si consume la base de datos.
 
 
 
